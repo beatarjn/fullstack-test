@@ -1,5 +1,8 @@
 package com.instantor.dap.springbootbackend.controller;
 
+//import com.instantor.dap.springbootbackend.domain.CharacterObject;
+import com.instantor.dap.springbootbackend.domain.CharacterObject;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -12,6 +15,19 @@ public class StarWarsCharacterController {
      */
     @GetMapping("/character")
     public String getCharacter() {
-        return "{}";
+        CharacterObject characterObject = new CharacterObject();
+//        StarWarsCharacterPost.getCharacter(character);
+
+        String character = characterObject.getCharacter().toString();
+        return character;
     }
+
 }
+
+//class StarWarsCharacterPost {
+//
+//    @PostMapping("https://swapi.co/people/1/")
+//    public static void getCharacter(@ModelAttribute("character") Character character) {
+//        System.out.println(character.toString());
+//    }
+//}
